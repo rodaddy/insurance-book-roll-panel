@@ -135,7 +135,7 @@ async function main(): Promise<void> {
       `const VERSION = ${JSON.stringify(manifest.version)};`,
     )
     .replace(
-      /^const METADATA_SHA256 = .*;$/m,
+      /^const METADATA_SHA256 =\s*.*;$/m, // value may sit on the next line
       `const METADATA_SHA256 = ${JSON.stringify(metadataDigest)};`,
     );
   if (
