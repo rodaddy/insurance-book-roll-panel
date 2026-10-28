@@ -1,0 +1,4 @@
+interface:
+  display_name: "Insurance Book-Roll Panel"
+  short_description: "Read a renewal or book-roll letter back through 13 policyholder seats before you mail it"
+  default_prompt: "Use $insurance-book-roll-panel to build a book panel and wash the letter I am about to mail."

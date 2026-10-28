@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "panel": {
+    "id": "__PANEL_ID__",
+    "name": "__PANEL_NAME__",
+    "objective": "Replace with the exact decision this letter drives. Example: would this policyholder call the office after reading the renewal letter, or set it down and start shopping?",
+    "decision_signal": "Replace with the observable action. Example: calls or emails the agency about this letter within two weeks of receiving it.",
+    "artifact_types": [],
+    "status": "draft",
+    "created_at": "__CREATED_AT__",
+    "review_due": "Set a date to re-read these seats against the book.",
+    "owner_context": "owner/OWNER-CONTEXT.md",
+    "evidence_index": "evidence/SOURCE-NOTES.md",
+    "book_profile": "book-profile.md",
+    "calibration_outcome": "Replace with the real outcome you will count after the mailing. Example: inbound calls referencing the letter, non-renewals in the mailed cohort, or cross-sell quote requests.",
+    "calibration_horizon": "Replace with how long after the mailing you will count it. Example: 45 days from the drop date."
+  },
+  "execution": {
+    "preferred_mode": "isolated-parallel",
+    "max_parallel_per_wave": 7
+  },
+  "scoring": {
+    "dimensions": [
+      {
+        "id": "reads-as-intended",
+        "label": "Reads as what it is, not as a price-increase notice",
+        "weight": 25
+      },
+      {
+        "id": "reason-lands",
+        "label": "The stated reason is believed, not merely stated",
+        "weight": 20
+      },
+      {
+        "id": "relationship-holds",
+        "label": "The client still feels the agency is on their side",
+        "weight": 20
+      },
+      {
+        "id": "action-is-clear",
+        "label": "The client knows exactly what to do and that a person will answer",
+        "weight": 20
+      },
+      {
+        "id": "dissent-integrity",
+        "label": "The seats who should say no still say no",
+        "weight": 15
+      }
+    ]
+  },
+  "seats": [
+    {
+      "id": "tenured-personal-lines-loyalist",
+      "name": "Replace with a composite name",
+      "kind": "buyer",
+      "fit": "core",
+      "dossier": "dossiers/tenured-personal-lines-loyalist.md",
+      "decision_signal": "Calls the office rather than quietly requesting a quote elsewhere.",
+      "active": false
+    },
+    {
+      "id": "contractor-general-liability-jump",
+      "name": "Replace with a composite name",
+      "kind": "buyer",
+      "fit": "core",
+      "dossier": "dossiers/contractor-general-liability-jump.md",
+      "decision_signal": "Calls the producer to work the renewal instead of putting it out to bid.",
+      "active": false
+    },
+    {
+      "id": "restaurant-owner-premium-line-only",
+      "name": "Replace with a composite name",
+      "kind": "buyer",
+      "fit": "core",
+      "dossier": "dossiers/restaurant-owner-premium-line-only.md",
+      "decision_signal": "Reads past the premium line far enough to call before shopping.",
+      "active": false
+    },
+    {
+      "id": "multi-entity-landlord",
+      "name": "Replace with a composite name",
+      "kind": "buyer",
+      "fit": "core",
+      "dossier": "dossiers/multi-entity-landlord.md",
+      "decision_signal": "Recognizes which of their entities this letter is about and responds to it.",
+      "active": false
+    },
+    {
+      "id": "price-shopper-holding-a-quote",
+      "name": "Replace with a composite name",
+      "kind": "buyer",
+      "fit": "core",
+      "dossier": "dossiers/price-shopper-holding-a-quote.md",
+      "decision_signal": "Calls the agency before accepting the competitor quote already in hand.",
+      "active": false
+    },
+    {
+      "id": "small-commercial-owner-operator",
+      "name": "Replace with a composite name",
+      "kind": "buyer",
+      "fit": "core",
+      "dossier": "dossiers/small-commercial-owner-operator.md",
+      "decision_signal": "Calls about the renewal rather than deferring it to the end of the month.",
+      "active": false
+    },
+    {
+      "id": "recent-claim-client",
+      "name": "Replace with a composite name",
+      "kind": "buyer",
+      "fit": "core",
+      "dossier": "dossiers/recent-claim-client.md",
+      "decision_signal": "Believes the increase is not retaliation for their claim and stays.",
+      "active": false
+    },
+    {
+      "id": "office-manager-who-handles-the-mail",
+      "name": "Replace with a composite name",
+      "kind": "user",
+      "fit": "core",
+      "dossier": "dossiers/office-manager-who-handles-the-mail.md",
+      "decision_signal": "Routes the letter to the owner with the right urgency instead of filing it.",
+      "active": false
+    },
+    {
+      "id": "cross-sell-target-auto-only",
+      "name": "Replace with a composite name",
+      "kind": "buyer",
+      "fit": "adjacent",
+      "dossier": "dossiers/cross-sell-target-auto-only.md",
+      "decision_signal": "Sends the declarations page the letter asks for.",
+      "active": false
+    },
+    {
+      "id": "referring-accountant",
+      "name": "Replace with a composite name",
+      "kind": "influencer",
+      "fit": "adjacent",
+      "dossier": "dossiers/referring-accountant.md",
+      "decision_signal": "Would still refer a client to this agency after seeing this letter.",
+      "active": false
+    },
+    {
+      "id": "compliance-and-claims-reviewer",
+      "name": "Replace with a composite name",
+      "kind": "specialist",
+      "fit": "adjacent",
+      "dossier": "dossiers/compliance-and-claims-reviewer.md",
+      "decision_signal": "Flags any statement about coverage, carrier, or rate that the agency cannot support in writing.",
+      "active": false
+    },
+    {
+      "id": "already-leaving-regardless",
+      "name": "Replace with a composite name",
+      "kind": "buyer",
+      "fit": "hard-no",
+      "dossier": "dossiers/already-leaving-regardless.md",
+      "decision_signal": "Declines regardless of how well the letter is written; the decision was made before it arrived.",
+      "active": false
+    },
+    {
+      "id": "wrong-cross-sell-target",
+      "name": "Replace with a composite name",
+      "kind": "buyer",
+      "fit": "wrong-fit",
+      "dossier": "dossiers/wrong-cross-sell-target.md",
+      "decision_signal": "Should decline because the product being offered genuinely does not fit their situation.",
+      "active": false
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "$schema": "./kit.schema.json",
+  "schema_version": 1,
+  "id": "insurance-book-roll-panel",
+  "name": "Insurance Book-Roll Panel",
+  "version": "0.2.3",
+  "description": "Read an insurance agency's renewal, cross-sell, or book-roll letter back to it through 13 dossier-backed policyholder seats before it is mailed.",
+  "entrypoints": {
+    "install": "INSTALL.md",
+    "readme": "README.md",
+    "start": "START-HERE.md",
+    "operator": "OPERATIONS-MANUAL.md"
+  },
+  "installation": {
+    "strategy": "agent-managed",
+    "payloads": [
+      {
+        "source": "skills/insurance-book-roll-panel",
+        "kind": "agent-skill",
+        "destination": "the host agent's documented persistent skill or project mechanism"
+      }
+    ],
+    "writes": [
+      "the selected host agent's persistent skill or project location",
+      "one panel workspace at a location the agency chooses",
+      "a disposable workspace under the host's configured temporary workspace during verification"
+    ],
+    "preserve": [
+      "every existing panel workspace, completed run, and calibration ledger",
+      "the agency's book profile, brief, dossiers, and branding",
+      "the previous installation until an upgrade is verified"
+    ],
+    "forbidden": [
+      "agency or policyholder data inside this shipped kit",
+      "live work inside the kit's examples/ folder",
+      "verification against shipped example letters instead of the agency's own",
+      "replacement of an unrelated destination collision",
+      "silent machine-level runtime installation or upgrade"
+    ]
+  },
+  "requirements": {
+    "runtimes": [
+      {
+        "id": "node",
+        "version": ">=22.18.0",
+        "check": ["node", "--version"],
+        "required_for": [
+          "the letter-input refusal gate",
+          "panel initialization and validation",
+          "run preparation and completed-run validation",
+          "full installation verification"
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "files": [
+      "INSTALL.md",
+      "kit.json",
+      "kit.schema.json",
+      "VERSION",
+      "CHANGELOG.md",
+      "README.md",
+      "START-HERE.md",
+      "OPERATIONS-MANUAL.md",
+      "ACCEPTANCE.md",
+      "skills/insurance-book-roll-panel/SKILL.md",
+      "skills/insurance-book-roll-panel/USER-CONFIG.md",
+      "skills/insurance-book-roll-panel/KIT-METADATA.json",
+      "skills/insurance-book-roll-panel/package.json",
+      "skills/insurance-book-roll-panel/agents/openai.yaml",
+      "skills/insurance-book-roll-panel/scripts/check-letter-input.ts",
+      "skills/insurance-book-roll-panel/scripts/init-panel.ts",
+      "skills/insurance-book-roll-panel/scripts/verify-install.ts",
+      "skills/insurance-book-roll-panel/scripts/validate-panel.ts",
+      "skills/insurance-book-roll-panel/scripts/prepare-run.ts",
+      "skills/insurance-book-roll-panel/scripts/validate-run.ts",
+      "skills/insurance-book-roll-panel/scripts/room.sh",
+      "skills/insurance-book-roll-panel/references/book-seat-shapes.md",
+      "skills/insurance-book-roll-panel/references/letter-input-standard.md",
+      "skills/insurance-book-roll-panel/workflows/build-book-panel.md",
+      "skills/insurance-book-roll-panel/workflows/wash-letter.md",
+      "skills/insurance-book-roll-panel/assets/workspace-template/book-profile.md",
+      "verify-copied-install.ts"
+    ],
+    "commands": [
+      {
+        "id": "copied-install-equality",
+        "runtime": "node",
+        "entrypoint": "verify-copied-install.ts",
+        "argv": ["node", "verify-copied-install.ts", "<copied-destination>"],
+        "cwd": "."
+      },
+      {
+        "id": "installed-payload-integrity",
+        "runtime": "node",
+        "entrypoint": "scripts/verify-install.ts",
+        "argv": ["node", "scripts/verify-install.ts"],
+        "cwd": "skills/insurance-book-roll-panel"
+      }
+    ]
+  }
+}
