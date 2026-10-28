@@ -17,7 +17,7 @@ const EXEMPT_PREFIXES = ["branding/"];
 
 // LOCAL ADAPTATION (insurance-book-roll-panel, 2026-08-12)
 // -------------------------------------------------------
-// Copied from pocs/kits/portable-kits/generate-install-integrity.ts. The
+// Copied from the portable-kits generate-install-integrity.ts. The
 // original lives in an AUTHORING ROOT holding several kits and requires its
 // argument to be a child of that root. This kit is a sibling of portable-kits
 // rather than a child of it, so the generator ships INSIDE the kit and the
