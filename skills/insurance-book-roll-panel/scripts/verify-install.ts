@@ -5,7 +5,7 @@ import { relative, resolve, sep } from "node:path";
 const KIT_ID = "insurance-book-roll-panel";
 const VERSION = "0.2.3";
 const METADATA_SHA256 =
-  "252bd4835a010fe1fa2edc4a23ffa59c103f4f17d115525fba79ce130a1514a1";
+  "3c1ef6ae18873c6e9f6b22fcb1950fcb844e3d4e26d797f6251652291de4c958";
 const ROOT = resolve(import.meta.dirname, "..");
 const METADATA_PATH = resolve(ROOT, "KIT-METADATA.json");
 const EXEMPT_FILES = new Set([

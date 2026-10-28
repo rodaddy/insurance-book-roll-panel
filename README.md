@@ -113,10 +113,9 @@ missed the exact letter it existed to catch. The dated story is in
 
 Experimental, version 0.2.3. Built and self-tested; never run against a real
 agency letter and never checked on a real device by a person. `ACCEPTANCE.md`
-lists what is done and what is not. At this snapshot 30 of 32 tests pass: the
-two installed-integrity tests fail because folder README files added on
-2026-08-24 are not yet in the payload's integrity record
-(`KIT-METADATA.json`).
+lists what is done and what is not. All 32 tests pass. After changing any file
+in the skill payload, run `node generate-install-integrity.ts .` to refresh
+its integrity record (`KIT-METADATA.json`).
 
 ## Credits
 

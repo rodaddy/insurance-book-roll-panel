@@ -105,8 +105,9 @@ suite reached 32 tests.
 
 ## Current state (2026-10-27)
 
-Version 0.2.3, experimental. 30 of 32 tests pass at this snapshot. The two
-failures are installed-integrity tests: folder README files added on
-2026-08-24 were not added to the payload's integrity record, and the integrity
-check reports the mismatch, as designed. No real agency letter has been through
-the kit yet.
+Version 0.2.3, experimental. 30 of 32 tests passed until 2026-10-28. The two
+failures were installed-integrity tests: folder README files added on
+2026-08-24 were not in the payload's integrity record, and the generator that
+refreshes it could not rewrite the verifier's wrapped digest constant. The
+generator was fixed, the record regenerated, and all 32 tests now pass. No
+real agency letter has been through the kit yet.
