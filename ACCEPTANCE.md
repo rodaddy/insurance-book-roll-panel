@@ -6,7 +6,7 @@ real device. Unchecked boxes below are unchecked because they are genuinely not
 done, not because they were forgotten.
 
 An agent dry-run is stronger evidence than reading the files and weaker than
-Rico opening the zip on a phone. Nothing here closes a device check.
+a person opening the zip on a phone. Nothing here closes a device check.
 
 **Workout, 2026-08-12 (v0.1.1).** Three rounds against three invented Long
 Island agencies — a Bay Shore carrier roll, a Massapequa Park commercial
@@ -134,11 +134,11 @@ their input is not good enough. This kit names three, all decided by
 ## Positioning law (repo LAW, non-negotiable)
 
 - [ ] **Script receipt for the positioning-law scan is still missing.** The
-      repo's own wrapper, `_graph/done-means/positioning-law-scan.sh`, was NOT
+      working repo's positioning-scan wrapper was NOT
       invoked: it performs forced scratch-file deletion (`rm -f`), which an
       agent is forbidden to run. A hand-run of the wrapper's pattern table over
-      the kit copy found no headcount-replacement language, but under Graph
-      Mode's "agent produces, script judges" rule that is an agent judgment, not
+      the kit copy found no headcount-replacement language, but under the
+      "agent produces, script judges" rule that is an agent judgment, not
       a receipt, so this box stays open. Closing it needs a human to run the
       wrapper, or the wrapper to stop deleting.
 - [x] The kit reduces the WORK on the agency's staff — it does not do the
@@ -150,9 +150,9 @@ their input is not good enough. This kit names three, all decided by
 
 - [ ] **One live first-run against a real agency letter.** Nothing here has
       washed an actual letter an agency was about to mail.
-- [ ] **Real-device spot check by a human** (Rico, actual phone or laptop,
-      actual AI app) before it rides a Drive share. This is the standing
-      LI-smb-hq rule and no agent run substitutes for it.
+- [ ] **Real-device spot check by a human** (actual phone or laptop,
+      actual AI app) before it rides a Drive share. This is a standing
+      rule and no agent run substitutes for it.
 - [ ] 3A coding-agent install, six-point verify, in a clean room.
 - [ ] 3B chat-app path — AI generates the zips, layout checked.
 - [ ] 3C condensation path — preserve-list honored, PAUSE gate present.

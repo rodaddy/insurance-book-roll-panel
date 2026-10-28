@@ -62,9 +62,9 @@ green receipt recorded over a red suite. Both are fixed here.
   carried the same overstatement. The claim is corrected here and the underlying
   defect is fixed rather than the assertion softened.
 - **`ACCEPTANCE.md`'s positioning-law box is reopened.** It was checked on a
-  hand-run of the wrapper's pattern table while stating that the repo's own
-  `_graph/done-means/positioning-law-scan.sh` was not invoked. Under Graph Mode's
-  "agent produces, script judges" rule a hand-run is an agent judgment, not a
+  hand-run of the wrapper's pattern table while stating that the working repo's own
+  positioning-scan script was not invoked. Under the "agent produces, script
+  judges" rule a hand-run is an agent judgment, not a
   receipt. The box stays open with the reason: the wrapper performs forced
   scratch-file deletion, which an agent may not run.
 
@@ -162,10 +162,9 @@ installs Bun to use it.
 
 ### Changed
 
-- **Every deterministic script runs under plain `node`.** Rico ruling
-  2026-08-13: kits must never require Bun of a buyer ("Bun is on its way out and
-  dying"). The scripts stay TypeScript; Node executes them directly with no
-  build step, no bundler, and no `npm install`.
+- **Every deterministic script runs under plain `node`.** Design rule
+  from 2026-08-13: kits must never require Bun of a buyer. The scripts stay
+  TypeScript; Node executes them directly with no build step, no bundler, and no `npm install`.
 - **Ported the three Bun-specific things:** `import.meta.dir` ->
   `import.meta.dirname`; relative imports now carry explicit `.ts` extensions,
   which Node ESM requires; `bun:test` / `Bun.spawn` / `Bun.file` -> `node --test`
@@ -184,7 +183,7 @@ installs Bun to use it.
   so every buyer received a Bun lockfile pinning `@types/bun` and `bun-types`
   for a kit that no longer uses Bun. Nothing referenced it — not `kit.json`
   `verification.files`, not the integrity manifest, not any script — so it was
-  orphaned Bun tooling state contradicting the ruling on the buyer's disk.
+  orphaned Bun tooling state contradicting that rule on the buyer's disk.
 
 ### Fixed
 
@@ -327,11 +326,9 @@ human. Nothing here is proven in the field.
 
 ### Added
 
-- Created the kit as a PANEL PATTERN re-skin per the kit tribunal thesis
-  (`research/kits/2026-08-11_kit-quality-tribunal.md` § "1. Insurance Book-Roll
-  Panel"), gating the insurance vertical launch confirmed 2026-08-12.
+- Created the kit as a PANEL PATTERN re-skin per the 2026-08-11 kit quality review, gating the insurance vertical launch confirmed 2026-08-12.
 - Reused the proven panel mechanism unchanged from
-  `pocs/kits/portable-kits/synthetic-customer-panel/`: the runner, scoring
+  the portable-kits `synthetic-customer-panel` reference kit: the runner, scoring
   engine, rubric machinery, seat/synthesis/scoring contracts, all five
   validators, the copied-install verifier, and the behavior test suite. No new
   machinery was invented for work the proven kit already does.
@@ -346,8 +343,8 @@ human. Nothing here is proven in the field.
   that usage (`2`) and harness (`3`) errors stay distinguishable. Verified
   red-first: 8 of 9 tests fail against an always-pass stub.
 - Added the thirteen policyholder seat shapes in
-  `references/book-seat-shapes.md`, grounded in the verified LI agency evidence
-  in `research/vertical-selection/2026-08-11_backdoor-verification-li.md`, with
+  `references/book-seat-shapes.md`, grounded in verified public data on Long Island agencies (US Census
+  County Business Patterns, kept in the working repo), with
   an explicit statement that the density research supports the SHAPES existing
   and supports nothing about how a policyholder reacts — behavioral claims are
   labeled modeled assumptions until calibrated.
@@ -376,7 +373,7 @@ human. Nothing here is proven in the field.
   states plainly that no sample letter is provided on purpose.
 - Replaced `/tmp` and `$TMPDIR` use inherited from the exemplar's test suite
   with the configured temp workspace, overridable via `RTECH_SCRATCH_ROOT`
-  (repo hard rule; `_graph/lane-contract.md` standing rule 2).
+  (working-repo rule).
 - Replaced the inherited recursive test cleanup with an archive move, and
   narrowed two single-file deletions to `unlink` (repo rule: an agent's cleanup
   verb is `mv`, never a recursive or forced delete).
